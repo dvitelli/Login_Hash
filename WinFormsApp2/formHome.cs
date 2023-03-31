@@ -1,12 +1,12 @@
-using TextValidation;
+
 
 namespace HashLogin
 {
-    public partial class formHome : Form
+    public partial class FormHome : Form
     {
 
         static Validation textValidation = new Validation();
-        public formHome()
+        public FormHome()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace HashLogin
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             //open a new register account window
-            formRegister registerAccount = new formRegister();
+            FormRegister registerAccount = new FormRegister();
             registerAccount.ShowDialog();
         }
 
@@ -33,10 +33,10 @@ namespace HashLogin
         private void ValidationCheck(TextBox textUsername, TextBox textPassword)
         {
 
-            if (textValidation.checkEmptyUsername(textUsername))
-                if (textValidation.checkEmptyUsername(textUsername))
-                    if (textValidation.checkEmptyPassword(textPassword))
-                        if (textValidation.checkUsernameCharacters(textUsername)) ;
+            //if (textValidation.checkEmptyUsername(textUsername))
+               // if (textValidation.checkEmptyUsername(textUsername))
+                    //if (textValidation.checkEmptyPassword(textPassword))
+                     //   if (textValidation.checkUsernameCharacters(textUsername)) ;
 
         }
 

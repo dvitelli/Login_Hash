@@ -14,7 +14,7 @@ C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\r
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\LoginForm.pdb
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\LoginForm.genruntimeconfig.cache
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\LoginForm.csproj.AssemblyReference.cache
-C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\HashLogin.formHome.resources
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\HashLogin.formRegister.resources
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\HashLogin.HashInput.resources
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\LoginForm.Properties.Resources.resources
+C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net6.0-windows\HashLogin.FormHome.resources
