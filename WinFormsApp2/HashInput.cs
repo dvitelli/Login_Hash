@@ -8,7 +8,10 @@ namespace HashLogin
 {
     internal class HashInput
     {
-
+        public void hashInput(TextBox username, TextBox password)
+        {
+            System.Diagnostics.Debug.WriteLine("Its hashing time");
+        }
 
     }
 }

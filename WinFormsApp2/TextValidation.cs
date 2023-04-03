@@ -13,7 +13,7 @@ namespace HashLogin
         {
             int len = text.TextLength;
             //System.Diagnostics.Debug.WriteLine("Username :" + textUsername.Text);
-            //check is username has nothing in it
+            //check if username has nothing in it
             if (len < min || len > max)     
             {
                 //error message for not having any text
@@ -23,65 +23,42 @@ namespace HashLogin
             return this;
         }
 
-        public bool checkPasswordReenterCharacters(TextBox textRenterPassword)
+        public Validation checkPasswordCharacters(TextBox textPassword, string errorMessage = "Invalid password.")
         {
-            string regexPasswordPattern = "^(?=.*?[A-Za-z])(?=.*?[\\d])(?=.*?[#?!@$%^&*-]).{8,}$";
-            Regex regex = new Regex(regexPasswordPattern);
-
-            if (!regex.IsMatch(textRenterPassword.Text))
-            {
-                //System.Diagnostics.Debug.WriteLine("Getting here");
-                MessageBox.Show("Your password must contain a minimum of eight characters, at least one letter, one number and one special character.", 
-                    "Incorrect Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            return true;
-        }
-
-        public bool checkPasswordCharacters(TextBox textPassword)
-        {
-            string regexPasswordPattern = "^(?=.*?[A-Za-z])(?=.*?[\\d])(?=.*?[#?!@$%^&*-]).{8,}$";
+            string regexPasswordPattern = "^(?=.*?[A-Za-z])(?=.*?[\\d])(?=.*?[#?!@$%^&*-]).{8,}$";//check to make sure password 
             Regex regex = new Regex(regexPasswordPattern);
 
             if (!regex.IsMatch(textPassword.Text))
             {
                 //System.Diagnostics.Debug.WriteLine("Getting here");
-                MessageBox.Show("Your password must contain a minimum of eight characters, at least one letter, one number and one special character.", 
-                    "Incorrect Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                throw new Exception(errorMessage);
             }
 
-            return true;
+            return this;
         }
 
-        public bool checkMatchingPasswords(TextBox textPassword, TextBox textPasswordReentry)
+        public Validation checkMatchingPasswords(TextBox textPassword, TextBox textPasswordReentry, string errorMessage = "Passwords dont match.")
         {
 
-            if (textPassword.Text != textPasswordReentry.Text)
+            if (textPassword.Text != textPasswordReentry.Text)//check if passwords match
             {
-                MessageBox.Show("Both passwords do not match. Please enter matching passwords.", "Password Mismatch",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                throw new Exception(errorMessage);
             }
 
-            return true;
+            return this;
         }
 
-        public bool checkUsernameCharacters(TextBox textUsername)
+        public Validation checkUsernameCharacters(TextBox textUsername, string errorMessage = "Invalid username.")
         {
-            string regexUsernamePattern = "[a-zA-Z][a-zA-Z0-9].{5,}";
+            string regexUsernamePattern = "[A-Za-z0-9]{3,32}";//username must be alphanumeric characters 3-32
             Regex regex = new Regex(regexUsernamePattern);
 
             if (!regex.IsMatch(textUsername.Text))
-            {
-                System.Diagnostics.Debug.WriteLine("Getting here");
-                MessageBox.Show("Your username must start with a letter and then contain only alphanumeric characters of length at least 5.", "Incorrect Username",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+            { 
+                throw new Exception(errorMessage);
             }
 
-            return true;
+            return this;
         }
             
 }

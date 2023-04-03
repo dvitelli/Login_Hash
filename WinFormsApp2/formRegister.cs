@@ -14,6 +14,7 @@ namespace HashLogin
     public partial class FormRegister : Form
     {
         static Validation textValidation = new Validation();
+        static HashInput hashInput = new HashInput();
         public FormRegister()
         {
             InitializeComponent();
@@ -22,6 +23,15 @@ namespace HashLogin
         private void buttonRegisterAccount_Click(object sender, EventArgs e)
         {
             ValidationCheckRegister(textRegisterUsername, textRegisterPassword, textRegisterPasswordReenter);//sends entered information through validation
+            hashInput.hashInput(textRegisterUsername, textRegisterPassword);
+            successfulRegister(textRegisterUsername, textRegisterPassword);
+            this.Close();//close register tab when successful
+        }
+
+        private void successfulRegister(TextBox textRegisterUsername, TextBox textRegisterPassword)
+        {
+            MessageBox.Show("Account successfull registerd.", "Account Registered",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -41,10 +51,10 @@ namespace HashLogin
                 textValidation.checkStringLength(textUsername, "Username can not be empty.", 1)// check if username is empty
                     .checkStringLength(textPassword, "Password can not be empty.", 1)// check if password is empty
                     .checkStringLength(textRenterPassword, "Password can not be empty.", 1);// check if password reentry is empty
-                            if (textValidation.checkUsernameCharacters(textUsername))// check if username starts with a letter and then contains only alphanumeric characters
-                                if (textValidation.checkPasswordCharacters(textPassword))
-                                    if (textValidation.checkPasswordReenterCharacters(textRenterPassword))
-                                        if (textValidation.checkMatchingPasswords(textPassword, textRenterPassword));//checks if passwords match
+                textValidation.checkUsernameCharacters(textUsername, "Username must start with a letter and contain only aphanumeric characters. Usernames must be at least 5 characters long.");//Username must be alphanumeric values from 3-32 characters
+                textValidation.checkPasswordCharacters(textPassword, "Your password must contain a minimum of eight characters, at least one letter, one number and one special character.")
+                    .checkPasswordCharacters(textRenterPassword, "Your reentered password must contain a minimum of eight characters, at least one letter, one number and one special character.");
+                textValidation.checkMatchingPasswords(textPassword, textRenterPassword, "Both passwords do not match. Please enter matching passwords.");//checks if passwords match
             }
             catch(Exception e) 
             {
@@ -54,6 +64,8 @@ namespace HashLogin
                       
                   
             }
+
+
 
         }
     }
