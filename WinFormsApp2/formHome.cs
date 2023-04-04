@@ -11,6 +11,12 @@ namespace HashLogin
         {
             InitializeComponent();
         }
+        private void buttonLogin_Click_1(object sender, EventArgs e)
+        {
+            //check if forms are empty
+            ValidationCheck(textUsername, textPassword);
+
+        }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
@@ -33,11 +39,11 @@ namespace HashLogin
                 textValidation.checkStringLength(textUsername, "Username can not be empty.", 1)
                     .checkStringLength(textPassword, "Password can not be empty.", 1);
                 //need a username matches one on file error check
-                if (!hashInput.verifyPassword(textPassword))
+                /*if (!hashInput.verifyPassword(textPassword))
                 {
                     throw new InvalidOperationException(
                         "Password does not match one on file. Please re-enter your password and try again.");
-                }
+                }*/
 
             }
             catch (Exception e)
@@ -51,14 +57,6 @@ namespace HashLogin
 
         }
 
-        private void buttonLogin_Click_1(object sender, EventArgs e)
-        {
-            //check if forms are empty
-            ValidationCheck(textUsername, textPassword);
-            if (hashInput.verifyPassword(textPassword))
-            {
-                System.Diagnostics.Debug.WriteLine("Password matches");
-            }
-        }
+
     }
 }

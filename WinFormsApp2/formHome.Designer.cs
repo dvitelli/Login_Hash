@@ -80,7 +80,6 @@
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(219, 23);
             this.textUsername.TabIndex = 3;
-            // 
             // textPassword
             // 
             this.textPassword.Location = new System.Drawing.Point(67, 270);

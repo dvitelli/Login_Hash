@@ -13,6 +13,7 @@ namespace HashLogin
 {
     public partial class FormRegister : Form
     {
+        
         static Validation textValidation = new Validation();
         static HashInput hashInput = new HashInput();
         public FormRegister()
@@ -23,7 +24,7 @@ namespace HashLogin
         private void buttonRegisterAccount_Click(object sender, EventArgs e)
         {
             ValidationCheckRegister(textRegisterUsername, textRegisterPassword, textRegisterPasswordReenter);//sends entered information through validation
-            hashInput.hashInput(textRegisterPassword);
+            hashInput.hashInput(textRegisterUsername, textRegisterPassword, out byte[] salt);
             successfulRegister(textRegisterUsername, textRegisterPassword);
             this.Close();//close register tab when successful
         }
