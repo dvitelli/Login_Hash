@@ -4,7 +4,7 @@ namespace HashLogin
 {
     public partial class FormHome : Form
     {
-
+        static DatabaseConnection conn = new DatabaseConnection();
         static Validation textValidation = new Validation();
         static HashInput hashInput = new HashInput();
         public FormHome()
@@ -13,8 +13,17 @@ namespace HashLogin
         }
         private void buttonLogin_Click_1(object sender, EventArgs e)
         {
-            //check if forms are empty
-            ValidationCheck(textUsername, textPassword);
+            try
+            {
+                //check if forms are empty
+                ValidationCheck(textUsername, textPassword);
+                System.Diagnostics.Debug.WriteLine("Successfully logged in.");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
 
         }
 
@@ -38,12 +47,8 @@ namespace HashLogin
             {
                 textValidation.checkStringLength(textUsername, "Username can not be empty.", 1)
                     .checkStringLength(textPassword, "Password can not be empty.", 1);
-                //need a username matches one on file error check
-                /*if (!hashInput.verifyPassword(textPassword))
-                {
-                    throw new InvalidOperationException(
-                        "Password does not match one on file. Please re-enter your password and try again.");
-                }*/
+                conn.compareUsernameAndPass(textUsername, textPassword, "Username or password does not match.");
+                
 
             }
             catch (Exception e)

@@ -40,7 +40,7 @@ namespace HashLogin
 
         private void successfulRegister(TextBox textRegisterUsername, TextBox textRegisterPassword)
         {
-            MessageBox.Show("Account successfully registerd.", "Account Registered",//alert user that registration was successful
+            MessageBox.Show("Account "+textRegisterUsername.Text + " successfully registered.", "Account Registered",//alert user that registration was successful
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

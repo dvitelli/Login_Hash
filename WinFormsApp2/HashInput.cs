@@ -27,6 +27,10 @@ namespace HashLogin
                 hashAlgorithm,
                 keySize);
 
+            for (int i = 0; i < salt.Length; i++)
+            {
+                System.Diagnostics.Debug.WriteLine("getting salt 1." + salt[i]);
+            }
 
             db.addUser(username, password, Convert.ToHexString(hash), salt);
             //store username, salt, and hashed password
@@ -34,10 +38,12 @@ namespace HashLogin
             return Convert.ToHexString(hash);
         }
 
-        public bool VerifyPassword(string password, string hash, byte[] salt)//hashing algorithm from code-maze.com
+
+        public bool VerifyPassword(TextBox password, string hash, byte[] salt)//hashing algorithm from code-maze.com
         {
+            //make sure username exists
             //use salt and old hash to verify password
-            var hashToCompare = Rfc2898DeriveBytes.Pbkdf2(password, salt, iterations, hashAlgorithm, keySize);
+            var hashToCompare = Rfc2898DeriveBytes.Pbkdf2(password.Text, salt, iterations, hashAlgorithm, keySize);
             return hashToCompare.SequenceEqual(Convert.FromHexString(hash));
         }
     }
