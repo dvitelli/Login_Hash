@@ -23,10 +23,19 @@ namespace HashLogin
 
         private void buttonRegisterAccount_Click(object sender, EventArgs e)
         {
-            ValidationCheckRegister(textRegisterUsername, textRegisterPassword, textRegisterPasswordReenter);//sends entered information through validation
-            hashInput.hashInput(textRegisterUsername, textRegisterPassword, out byte[] salt);
-            successfulRegister(textRegisterUsername, textRegisterPassword);
-            this.Close();//close register tab when successful
+            try
+            {
+                ValidationCheckRegister(textRegisterUsername, textRegisterPassword, textRegisterPasswordReenter);//sends entered information through validation
+                hashInput.hashInput(textRegisterUsername, textRegisterPassword, out byte[] salt);
+                successfulRegister(textRegisterUsername, textRegisterPassword);
+                this.Close();//close register tab when successful}
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
+
         }
 
         private void successfulRegister(TextBox textRegisterUsername, TextBox textRegisterPassword)
@@ -62,6 +71,7 @@ namespace HashLogin
                   
                         MessageBox.Show(e.Message, "Error",//show user error message
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
                       
                   
             }

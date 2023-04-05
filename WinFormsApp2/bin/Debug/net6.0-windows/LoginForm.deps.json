@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "LoginForm/1.0.0": {
         "dependencies": {
-          "MySql.Data": "8.0.32.1",
-          "MySqlConnector": "2.2.5"
+          "MySql.Data": "8.0.32.1"
         },
         "runtime": {
           "LoginForm.dll": {}
@@ -107,14 +106,6 @@
             "rid": "win-x64",
             "assetType": "native",
             "fileVersion": "4.1.0.0"
-          }
-        }
-      },
-      "MySqlConnector/2.2.5": {
-        "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.5.0"
           }
         }
       },
@@ -279,13 +270,6 @@
       "sha512": "sha512-K5WkZz8hkiHyKSnEON5AER+oMxmwhRrSAy6/a7XnfWpytn8EyYLCFWe0lDNZqZJ/w79P1Qtw0TZvf3kP0a1fbg==",
       "path": "mysql.data/8.0.32.1",
       "hashPath": "mysql.data.8.0.32.1.nupkg.sha512"
-    },
-    "MySqlConnector/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6sinY78RvryhHwpup3awdjYO7d5hhWahb5p/1VDODJhSxJggV/sBbYuKK5IQF9TuzXABiddqUbmRfM884tqA3Q==",
-      "path": "mysqlconnector/2.2.5",
-      "hashPath": "mysqlconnector.2.2.5.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

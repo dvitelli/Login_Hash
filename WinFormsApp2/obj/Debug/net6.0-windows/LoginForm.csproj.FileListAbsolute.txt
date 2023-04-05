@@ -23,7 +23,6 @@ C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\K
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\MySql.Data.dll
-C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\MySqlConnector.dll
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\runtimes\win-x64\native\comerr64.dll
 C:\Users\domvi\source\repos\WinFormsApp2\WinFormsApp2\bin\Debug\net6.0-windows\runtimes\win-x64\native\gssapi64.dll
